@@ -32,7 +32,7 @@ function wp_ctd_google_analytics_settings_section_callback() {
 function wp_ctd_setting_field() {
 	$setting = get_option('wp_ctd_google_code');
 	?>
-    <textarea rows="4" cols="50" name="wp_ctd_google_code"><?php echo isset( $setting ) ? esc_attr( $setting ) : ''; ?></textarea>';
+    <textarea rows="4" cols="50" name="wp_ctd_google_code"><?php echo isset( $setting ) ? esc_attr( $setting ) : ''; ?></textarea>
     <?php
 }
 

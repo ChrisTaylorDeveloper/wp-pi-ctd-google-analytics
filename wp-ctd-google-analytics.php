@@ -37,6 +37,7 @@ function wp_ctd_setting_field() {
 }
 
 function wp_ctd_body_open() {
-     echo "xxxxxxxxxxxxxxxxxxxxxxxxxxxx";
+	$setting = get_option('wp_ctd_google_code');
+    echo isset( $setting ) ? $setting : '';
 }
 add_action( 'wp_body_open', 'wp_ctd_body_open' );

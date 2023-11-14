@@ -1,3 +1,10 @@
+<?php
+/**
+ * Plugin Name: WP CTD Google Analytics
+ * Description: Adds Google Analytics code to each page.
+ * Author: Chris Taylor
+ * Author URI: https://christaylordeveloper.co.uk
+ */
 /**
  * @internal never define functions inside callbacks.
  * these functions could be run multiple times; this would result in a fatal error.

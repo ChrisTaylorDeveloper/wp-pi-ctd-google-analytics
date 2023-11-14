@@ -7,7 +7,7 @@
  */
 
 function wporg_settings_init() {
-	register_setting( 'ctd', 'wporg_options' );
+	register_setting( 'ctd', 'ctd_opt_google_tag' );
 
 	add_settings_section(
 		'ctd_section_developers',
@@ -30,9 +30,9 @@ function ctd_section_developers_callback() {
 }
 
 function ctd_field_tag_cb() {
-	$options = get_option( 'wporg_options' );
+	$options = get_option( 'ctd_opt_google_tag' );
 	?>
-    <textarea rows="4" cols="50" name="wporg_options"><?php echo isset( $options ) ? esc_attr( $options ) : ''; ?></textarea>
+    <textarea rows="4" cols="50" name="ctd_opt_google_tag"><?php echo isset( $options ) ? esc_attr( $options ) : ''; ?></textarea>
 	<p class="description">
 		<?php esc_html_e( 'The Google Analytics Tag, to appear in the head of each page.', 'ctd' ); ?>
 	</p>

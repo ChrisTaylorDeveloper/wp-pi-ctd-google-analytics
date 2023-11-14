@@ -5,14 +5,7 @@
  * Author: Chris Taylor
  * Author URI: https://christaylordeveloper.co.uk
  */
-/**
- * @internal never define functions inside callbacks.
- * these functions could be run multiple times; this would result in a fatal error.
- */
 
-/**
- * custom option and settings
- */
 function wporg_settings_init() {
 	// Register a new setting for "wporg" page.
 	register_setting( 'wporg', 'wporg_options' );
@@ -39,42 +32,15 @@ function wporg_settings_init() {
 		)
 	);
 }
-
-/**
- * Register our wporg_settings_init to the admin_init action hook.
- */
 add_action( 'admin_init', 'wporg_settings_init' );
 
-
-/**
- * Custom option and settings:
- *  - callback functions
- */
-
-
-/**
- * Developers section callback function.
- *
- * @param array $args  The settings array, defining title, id, callback.
- */
 function wporg_section_developers_callback( $args ) {
 	?>
 	<p id="<?php echo esc_attr( $args['id'] ); ?>"><?php esc_html_e( 'Follow the white rabbit.', 'wporg' ); ?></p>
 	<?php
 }
 
-/**
- * Pill field callbakc function.
- *
- * WordPress has magic interaction with the following keys: label_for, class.
- * - the "label_for" key value is used for the "for" attribute of the <label>.
- * - the "class" key value is used for the "class" attribute of the <tr> containing the field.
- * Note: you can add custom key value pairs to be used inside your callbacks.
- *
- * @param array $args
- */
 function wporg_field_pill_cb( $args ) {
-	// Get the value of the setting we've registered with register_setting()
 	$options = get_option( 'wporg_options' );
 	?>
 	<select
@@ -109,11 +75,6 @@ function wporg_options_page() {
 		'wporg_options_page_html'
 	);
 }
-
-
-/**
- * Register our wporg_options_page to the admin_menu action hook.
- */
 add_action( 'admin_menu', 'wporg_options_page' );
 
 
@@ -125,8 +86,6 @@ function wporg_options_page_html() {
 	if ( ! current_user_can( 'manage_options' ) ) {
 		return;
 	}
-
-	// add error/update messages
 
 	// check if the user have submitted the settings
 	// WordPress will add the "settings-updated" $_GET parameter to the url
@@ -147,7 +106,6 @@ function wporg_options_page_html() {
 			// output setting sections and their fields
 			// (sections are registered for "wporg", each field is registered to a specific section)
 			do_settings_sections( 'wporg' );
-			// output save settings button
 			submit_button( 'Save Settings' );
 			?>
 		</form>

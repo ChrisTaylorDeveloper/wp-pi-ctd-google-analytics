@@ -18,7 +18,7 @@ function wporg_settings_init() {
 	add_settings_field(
 		'wporg_field_pill',
         __( 'Pill', 'wporg' ),
-		'wporg_field_pill_cb',
+		'ctd_field_tag_cb',
 		'wporg',
 		'ctd_section_developers'
 	);
@@ -31,7 +31,7 @@ function wporg_section_developers_callback( $args ) {
 	<?php
 }
 
-function wporg_field_pill_cb() {
+function ctd_field_tag_cb() {
 	$options = get_option( 'wporg_options' );
 	?>
     <textarea rows="4" cols="50" name="wporg_options"><?php echo isset( $options ) ? esc_attr( $options ) : ''; ?></textarea>

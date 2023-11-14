@@ -16,7 +16,7 @@ function wporg_settings_init() {
 	);
 
 	add_settings_field(
-		'wporg_field_pill',
+		'ctd_field_analytics',
         'Pill',
 		'ctd_field_tag_cb',
 		'ctd',
@@ -25,10 +25,8 @@ function wporg_settings_init() {
 }
 add_action( 'admin_init', 'wporg_settings_init' );
 
-function ctd_section_developers_callback( $args ) {
-	?>
-	<p id="<?php echo esc_attr( $args['id'] ); ?>"><?php esc_html_e( 'Settings for interaction with Google Analytics', 'ctd' ); ?></p>
-	<?php
+function ctd_section_developers_callback() {
+	?><p><?php esc_html_e( 'Settings for interaction with Google Analytics', 'ctd' ); ?></p><?php
 }
 
 function ctd_field_tag_cb() {

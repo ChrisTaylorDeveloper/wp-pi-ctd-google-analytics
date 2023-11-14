@@ -45,12 +45,12 @@ function wporg_options_page() {
 		'CTD Analytics',
 		'manage_options',
 		'ctd',
-		'wporg_options_page_html'
+		'ctd_analytics_opts_page_html'
 	);
 }
 add_action( 'admin_menu', 'wporg_options_page' );
 
-function wporg_options_page_html() {
+function ctd_analytics_opts_page_html() {
 	if ( ! current_user_can( 'manage_options' ) ) {
 		return;
 	}

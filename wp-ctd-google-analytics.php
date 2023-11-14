@@ -13,7 +13,7 @@ function wporg_settings_init() {
 	// Register a new section in the "wporg" page.
 	add_settings_section(
 		'wporg_section_developers',
-		__( 'The Matrix has you.', 'wporg' ), 'wporg_section_developers_callback',
+		__( 'CTD Google Analytics', 'wporg' ), 'wporg_section_developers_callback',
 		'wporg'
 	);
 
@@ -36,7 +36,7 @@ add_action( 'admin_init', 'wporg_settings_init' );
 
 function wporg_section_developers_callback( $args ) {
 	?>
-	<p id="<?php echo esc_attr( $args['id'] ); ?>"><?php esc_html_e( 'Follow the white rabbit.', 'wporg' ); ?></p>
+	<p id="<?php echo esc_attr( $args['id'] ); ?>"><?php esc_html_e( 'Settings for interaction with Google Analytics', 'wporg' ); ?></p>
 	<?php
 }
 
@@ -68,8 +68,8 @@ function wporg_field_pill_cb( $args ) {
  */
 function wporg_options_page() {
 	add_menu_page(
-		'WPOrg',
-		'WPOrg Options',
+		'CTD Analytics',
+		'CTD Analytics',
 		'manage_options',
 		'wporg',
 		'wporg_options_page_html'

@@ -6,7 +6,7 @@
  * Author URI: https://christaylordeveloper.co.uk
  */
 
-function wporg_settings_init() {
+function ctd_settings_init() {
 	register_setting( 'ctd', 'ctd_opt_google_tag' );
 
 	add_settings_section(
@@ -23,7 +23,7 @@ function wporg_settings_init() {
 		'ctd_section_developers'
 	);
 }
-add_action( 'admin_init', 'wporg_settings_init' );
+add_action( 'admin_init', 'ctd_settings_init' );
 
 function ctd_section_developers_callback() {
 	?><p><?php esc_html_e( 'Settings for interaction with Google Analytics', 'ctd' ); ?></p><?php

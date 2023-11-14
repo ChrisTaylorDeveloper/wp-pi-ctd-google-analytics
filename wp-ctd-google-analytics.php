@@ -11,7 +11,7 @@ function wporg_settings_init() {
 
 	add_settings_section(
 		'ctd_section_developers',
-		'CTD Google Analytics', 'wporg_section_developers_callback',
+		'CTD Google Analytics', 'ctd_section_developers_callback',
 		'ctd'
 	);
 
@@ -25,7 +25,7 @@ function wporg_settings_init() {
 }
 add_action( 'admin_init', 'wporg_settings_init' );
 
-function wporg_section_developers_callback( $args ) {
+function ctd_section_developers_callback( $args ) {
 	?>
 	<p id="<?php echo esc_attr( $args['id'] ); ?>"><?php esc_html_e( 'Settings for interaction with Google Analytics', 'ctd' ); ?></p>
 	<?php

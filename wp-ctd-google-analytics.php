@@ -56,10 +56,10 @@ function ctd_analytics_opts_page_html() {
 	}
 
 	if ( isset( $_GET['settings-updated'] ) ) {
-		add_settings_error( 'wporg_messages', 'wporg_message', 'Settings Saved', 'updated' );
+		add_settings_error( 'ctd_messages', 'ctd_message', 'Settings Saved', 'updated' );
 	}
 
-	settings_errors( 'wporg_messages' );
+	settings_errors( 'ctd_messages' );
 	?>
 	<div class="wrap">
 		<h1><?php echo esc_html( get_admin_page_title() ); ?></h1>

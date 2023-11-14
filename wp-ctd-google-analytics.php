@@ -19,17 +19,12 @@ function wporg_settings_init() {
 
 	// Register a new field in the "wporg_section_developers" section, inside the "wporg" page.
 	add_settings_field(
-		'wporg_field_pill', // As of WP 4.6 this value is used only internally.
-		                        // Use $args' label_for to populate the id inside the callback.
+		'wporg_field_pill', // As of WP 4.6 this value is used only internally. // Use $args' label_for to populate the id inside the callback.
 			__( 'Pill', 'wporg' ),
 		'wporg_field_pill_cb',
 		'wporg',
 		'wporg_section_developers',
-		array(
-			'label_for'         => 'wporg_field_pill',
-			'class'             => 'wporg_row',
-			'wporg_custom_data' => 'custom',
-		)
+		array( 'label_for' => 'wporg_field_pill', 'class' => 'wporg_row', 'wporg_custom_data' => 'custom' )
 	);
 }
 add_action( 'admin_init', 'wporg_settings_init' );
@@ -74,24 +69,20 @@ function wporg_options_page() {
 }
 add_action( 'admin_menu', 'wporg_options_page' );
 
-
 /**
  * Top level menu callback function
  */
 function wporg_options_page_html() {
-	// check user capabilities
 	if ( ! current_user_can( 'manage_options' ) ) {
 		return;
 	}
 
-	// check if the user have submitted the settings
-	// WordPress will add the "settings-updated" $_GET parameter to the url
+	// check if the user have submitted the settings // WordPress will add the "settings-updated" $_GET parameter to the url
 	if ( isset( $_GET['settings-updated'] ) ) {
 		// add settings saved message with the class of "updated"
 		add_settings_error( 'wporg_messages', 'wporg_message', __( 'Settings Saved', 'wporg' ), 'updated' );
 	}
 
-	// show error/update messages
 	settings_errors( 'wporg_messages' );
 	?>
 	<div class="wrap">
@@ -100,8 +91,7 @@ function wporg_options_page_html() {
 			<?php
 			// output security fields for the registered setting "wporg"
 			settings_fields( 'wporg' );
-			// output setting sections and their fields
-			// (sections are registered for "wporg", each field is registered to a specific section)
+			// output setting sections and their fields. (sections are registered for "wporg", each field is registered to a specific section)
 			do_settings_sections( 'wporg' );
 			submit_button( 'Save Settings' );
 			?>

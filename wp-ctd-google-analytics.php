@@ -7,19 +7,19 @@
  */
 
 function wporg_settings_init() {
-	register_setting( 'wporg', 'wporg_options' );
+	register_setting( 'ctd', 'wporg_options' );
 
 	add_settings_section(
 		'ctd_section_developers',
 		'CTD Google Analytics', 'wporg_section_developers_callback',
-		'wporg'
+		'ctd'
 	);
 
 	add_settings_field(
 		'wporg_field_pill',
         'Pill',
 		'ctd_field_tag_cb',
-		'wporg',
+		'ctd',
 		'ctd_section_developers'
 	);
 }
@@ -27,7 +27,7 @@ add_action( 'admin_init', 'wporg_settings_init' );
 
 function wporg_section_developers_callback( $args ) {
 	?>
-	<p id="<?php echo esc_attr( $args['id'] ); ?>"><?php esc_html_e( 'Settings for interaction with Google Analytics', 'wporg' ); ?></p>
+	<p id="<?php echo esc_attr( $args['id'] ); ?>"><?php esc_html_e( 'Settings for interaction with Google Analytics', 'ctd' ); ?></p>
 	<?php
 }
 
@@ -36,7 +36,7 @@ function ctd_field_tag_cb() {
 	?>
     <textarea rows="4" cols="50" name="wporg_options"><?php echo isset( $options ) ? esc_attr( $options ) : ''; ?></textarea>
 	<p class="description">
-		<?php esc_html_e( 'The Google Analytics Tag, to appear in the head of each page.', 'wporg' ); ?>
+		<?php esc_html_e( 'The Google Analytics Tag, to appear in the head of each page.', 'ctd' ); ?>
 	</p>
 	<?php
 }
@@ -46,7 +46,7 @@ function wporg_options_page() {
 		'CTD Analytics',
 		'CTD Analytics',
 		'manage_options',
-		'wporg',
+		'ctd',
 		'wporg_options_page_html'
 	);
 }
@@ -67,8 +67,8 @@ function wporg_options_page_html() {
 		<h1><?php echo esc_html( get_admin_page_title() ); ?></h1>
 		<form action="options.php" method="post">
 			<?php
-			settings_fields( 'wporg' );
-			do_settings_sections( 'wporg' );
+			settings_fields( 'ctd' );
+			do_settings_sections( 'ctd' );
 			submit_button( 'Save Settings' );
 			?>
 		</form>

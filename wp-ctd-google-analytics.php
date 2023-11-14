@@ -11,13 +11,13 @@ function wporg_settings_init() {
 
 	add_settings_section(
 		'ctd_section_developers',
-		__( 'CTD Google Analytics', 'wporg' ), 'wporg_section_developers_callback',
+		'CTD Google Analytics', 'wporg_section_developers_callback',
 		'wporg'
 	);
 
 	add_settings_field(
 		'wporg_field_pill',
-        __( 'Pill', 'wporg' ),
+        'Pill',
 		'ctd_field_tag_cb',
 		'wporg',
 		'ctd_section_developers'
@@ -58,7 +58,7 @@ function wporg_options_page_html() {
 	}
 
 	if ( isset( $_GET['settings-updated'] ) ) {
-		add_settings_error( 'wporg_messages', 'wporg_message', __( 'Settings Saved', 'wporg' ), 'updated' );
+		add_settings_error( 'wporg_messages', 'wporg_message', 'Settings Saved', 'updated' );
 	}
 
 	settings_errors( 'wporg_messages' );

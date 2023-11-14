@@ -39,7 +39,7 @@ function ctd_field_tag_cb() {
 	<?php
 }
 
-function wporg_options_page() {
+function ctd_options_page() {
 	add_menu_page(
 		'CTD Analytics',
 		'CTD Analytics',
@@ -48,7 +48,7 @@ function wporg_options_page() {
 		'ctd_analytics_opts_page_html'
 	);
 }
-add_action( 'admin_menu', 'wporg_options_page' );
+add_action( 'admin_menu', 'ctd_options_page' );
 
 function ctd_analytics_opts_page_html() {
 	if ( ! current_user_can( 'manage_options' ) ) {

@@ -11,7 +11,8 @@ function ctd_settings_init() {
 
 	add_settings_section(
 		'ctd_section_developers',
-		'CTD Google Analytics', 'ctd_section_developers_callback',
+		'CTD Google Analytics',
+        'ctd_section_developers_callback',
 		'ctd'
 	);
 

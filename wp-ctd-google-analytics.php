@@ -74,3 +74,9 @@ function ctd_analytics_opts_page_html() {
 	</div>
 	<?php
 }
+
+function ctd_wp_body_open() {
+    $setting = get_option('ctd_opt_google_tag');
+    echo isset( $setting ) ? $setting : '';
+}
+add_action( 'wp_body_open', 'ctd_wp_body_open' );

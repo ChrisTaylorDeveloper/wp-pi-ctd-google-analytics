@@ -18,7 +18,7 @@ function ctd_settings_init() {
 
 	add_settings_field(
 		'ctd_field_analytics',
-        'Pill',
+        'The Google Tag',
 		'ctd_field_tag_cb',
 		'ctd',
 		'ctd_section_developers'

@@ -1,9 +1,10 @@
 <?php
 /**
- * Plugin Name: WP CTD Google Analytics
- * Description: Adds Google Analytics code to each page.
- * Author: Chris Taylor
- * Author URI: https://christaylordeveloper.co.uk
+ * Plugin Name:     CTD Google Analytics
+ * Description:     Adds Google Analytics code to each page.
+ * Version:         1.0
+ * Author:          Chris Taylor
+ * Author URI:      https://christaylordeveloper.co.uk
  */
 
 function ctd_settings_init() {
